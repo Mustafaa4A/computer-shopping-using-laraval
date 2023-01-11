@@ -28,14 +28,14 @@ class CustomerController extends Controller
 
     public function __construct()
     {
-        $this->middleware(['auth', 'roll']);
+        $this->middleware(['auth']);
     }
 
     public function index()
     {
         $customers = Customer::all();
    
-        return view('customers.index', ['customers'=>$customers,]);
+        return view('customers.index', ['customers'=>$customers]);
     }
 
     public function create(Request $request){

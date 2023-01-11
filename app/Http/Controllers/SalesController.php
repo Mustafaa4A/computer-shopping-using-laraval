@@ -14,7 +14,7 @@ class SalesController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware(['auth']);
     }
     
     public function index()
@@ -52,11 +52,13 @@ class SalesController extends Controller
 
         $item = Product::where('product_id', $product)->first();
 
+
         if ($item->quantity < $quantity){
             return back()->withErrors([
-                'quantity'=>"You have ". (!$item->quantuty?0:$item->quantuty) ." items in the stock"
+                'quantity'=>"You have $item->quantity items in the stock"
             ])->onlyInput('customer', 'product', 'quantity', 'discount');
         };
+
 
         $price = $item->unit_price;
         $total_amount = ($price * $quantity) - ($price * $quantity * $discount / 100);

@@ -27,7 +27,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [DashboardController::class, 'index']);
 
-
 Route::get('/customers', [CustomerController::class, 'index']);
 Route::post('/customers', [CustomerController::class, 'create']);
 Route::get('/customers/edit/{id}', [CustomerController::class, 'editCustomer'])->name('customers.edit');
@@ -77,11 +76,12 @@ Route::get('/sales/edit/{id}', [SalesController::class, 'editSale'])->name('sale
 Route::get('/sales/delete/{id}', [SalesController::class, 'deleteSale'])
                                         ->name('sales.delete');
 
-Route::get('/users', [UserController::class, 'index'])->middleware('auth');
+Route::get('/users', [UserController::class, 'index'])->middleware(['auth']);
 Route::post('/users', [UserController::class, 'create'])->middleware('auth');
-Route::get('/users/edit/{id}', [UserController::class, 'editUser'])->name('users.edit')->middleware('auth');
+Route::get('/users/edit/{id}', [UserController::class, 'editUser'])->name('users.edit')
+      ->middleware(['auth']);
 Route::get('/users/delete/{id}', [UserController::class, 'deleteUser'])
-                                        ->name('users.delete')->middleware('auth');
+                                        ->name('users.delete')->middleware(['auth']);
 
 Route::get('/users/login', [UserController::class, 'display']);
 Route::post('/users/login', [UserController::class, 'login'])->name('login');

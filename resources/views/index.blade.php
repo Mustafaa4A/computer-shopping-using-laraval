@@ -35,64 +35,23 @@
 
 <div class="row">
   {{-- Customer --}}
+  @foreach ($info as $name=>$item)
   <div class="col-xl-3 mb-30">
     <div class="card-box height-100-p widget-style1" style="max-width: 200px">
       <div class="d-flex align-items-center">
         <div>
-          <i class="icon-copy dw dw-user h1 text-primary"></i>
+          <span class="micon icon-copy ion-checkmark-round h1 text-primary"></span>
         </div>
         <div class="widget-data text-center">
-          <div class="h4 mb-0">30</div>
-          <div class="weight-600 font-14 ">Customers</div>
+          <div class="h4 mb-0">{{$item}}</div>
+          <div class="weight-600 font-14 ">{{$name}}</div>
         </div>
       </div>
     </div>
   </div>
+  @endforeach
 
-  {{--  Supplier --}}
-  <div class="col-xl-3 mb-30">
-    <div class="card-box height-100-p widget-style1" style="max-width: 200px">
-      <div class="d-flex align-items-center">
-        <div>
-          <i class="icon-copy dw dw-user h1 text-primary"></i>
-        </div>
-        <div class="widget-data text-center">
-          <div class="h4 mb-0">30</div>
-          <div class="weight-600 font-14 ">Supplier</div>
-        </div>
-      </div>
-    </div>
-  </div>
 
-  {{-- Products --}}
-  <div class="col-xl-3 mb-30">
-    <div class="card-box height-100-p widget-style1" style="max-width: 200px">
-      <div class="d-flex align-items-center">
-        <div>
-          <i class="icon-copy dw dw-user h1 text-primary"></i>
-        </div>
-        <div class="widget-data text-center">
-          <div class="h4 mb-0">30</div>
-          <div class="weight-600 font-14 ">Supplier</div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  {{-- Users --}}
-  <div class="col-xl-3 mb-30">
-    <div class="card-box height-100-p widget-style1" style="max-width: 200px">
-      <div class="d-flex align-items-center">
-        <div>
-          <i class="icon-copy dw dw-user h1 text-primary"></i>
-        </div>
-        <div class="widget-data text-center">
-          <div class="h4 mb-0">30</div>
-          <div class="weight-600 font-14 ">Supplier</div>
-        </div>
-      </div>
-    </div>
-  </div>
 </div>
 
 @stop

@@ -76,7 +76,7 @@
         @csrf
         <input type="hidden" value="" name="id" id="id">
         <div class="modal-header">
-          <h4 class="modal-title" id="myLargeModalLabel">Add new purchase</h4>
+          <h4 class="modal-title" id="myLargeModalLabel">Add new sale</h4>
           <button type="button" class="close close-model" data-dismiss="modal" aria-hidden="true" >×</button>
         </div>
         <div class="modal-body">

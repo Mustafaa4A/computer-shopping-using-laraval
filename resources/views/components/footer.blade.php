@@ -1,6 +1,5 @@
  <div class="footer-wrap pd-20 mb-20 card-box mt-5">
-				DeskApp - Bootstrap 4 Admin Template By <a href="https://github.com/dropways" target="_blank">Ankit
-					Hingarajiya</a>
+				COMPUTER CHIPS <a href="https://github.com/dropways" target="_blank"> The Modern Technology</a>
 			</div>
 		</div>
 	</div>

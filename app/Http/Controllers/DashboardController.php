@@ -2,6 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Customer;
+use App\Models\Employee;
+use App\Models\Product;
+use App\Models\Supplier;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -13,14 +18,22 @@ class DashboardController extends Controller
     }
 
     public function index(){
-        // $user = auth()->user();
-        // $employee = DB::table('users')->join('employee', 'users.employee_id', 'employee.employee_id')
-        //                 ->select('username', 'employee_name', 'title')
-        //                 ->where('username', $user->username)
-        //                 ->first();
+        $employees = Employee::count();
+        $products = Product::count();
+        $customers = Customer::count();
+        $suppliers = Supplier::count();
+        $users = User::count();
+
+        $info = [
+            'Employees'=>$employees,
+            'Products'=>$products,
+            'Customers'=>$customers,
+            'Suppliers'=>$suppliers,
+            'Users'=>$users,
+        ];
+        
         return view('index', [
-            // 'employee'=>$employee,
-            // 'menus'=>$menus
+            'info'=>$info
         ]);
     }
 }
